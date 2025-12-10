@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baromètre NewGen 2025 - Analyse Profils</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #1e293b; }
+        .card { background: white; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border: 1px solid #E2E8F0; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); border-color: #CBD5E1; }
+        .chart-container { position: relative; width: 100%; height: 250px; }
+        
+        /* Gradients Profils */
+        .bg-gradient-univ { background: linear-gradient(135deg, #EF4444 0%, #B91C1C 100%); } /* Rouge */
+        .bg-gradient-ing { background: linear-gradient(135deg, #1F2937 0%, #000000 100%); } /* Noir */
+        .bg-gradient-mng { background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); } /* Bleu */
+        
+        .section-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+
+    <!-- Header -->
+    <header class="max-w-7xl mx-auto mb-12 text-center">
+        <span class="inline-block py-1 px-3 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold mb-4 uppercase tracking-wider border border-indigo-100">Étude 2024 • EDHEC NewGen Talent Centre</span>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">Attentes & Perceptions <br><span class="text-indigo-600">Premier Emploi</span></h1>
+        <p class="text-slate-500 max-w-2xl mx-auto">
+            Analyse comparative de 7 400 jeunes diplômés (Universitaires, Ingénieurs, Management).<br>
+            <span class="text-xs font-semibold uppercase mt-2 block text-slate-400">En partenariat avec JobTeaser</span>
+        </p>
+    </header>
+
+    <main class="max-w-7xl mx-auto space-y-16">
+
+        <!-- SECTION 1: TOP 3 ATTENTES (Le Match des Profils) -->
+        <section>
+            <h2 class="section-title">🏆 Top 3 des Attentes par Profil</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Profil Universitaire -->
+                <div class="card overflow-hidden">
+                    <div class="bg-gradient-univ p-4 text-white">
+                        <h3 class="font-bold text-lg">🟥 Universitaires</h3>
+                        <p class="text-xs opacity-90">La quête de Bienveillance</p>
+                    </div>
+                    <div class="p-6 space-y-5">
+                        <!-- Item 1 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-bold text-slate-700">1. Environnement Bienveillant</span>
+                                <span class="font-bold text-red-600">68%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div class="bg-red-500 h-2 rounded-full" style="width: 68%"></div></div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-600">2. Travail porteur de Sens</span>
+                                <span class="font-bold text-red-600">65%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div class="bg-red-500 h-2 rounded-full" style="width: 65%"></div></div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-600">3. Équilibre Vie Pro/Perso</span>
+                                <span class="font-bold text-red-600">63%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div class="bg-red-500 h-2 rounded-full" style="width: 63%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profil Ingénieur -->
+                <div class="card overflow-hidden">
+                    <div class="bg-gradient-ing p-4 text-white">
+                        <h3 class="font-bold text-lg">⬛ Ingénieurs</h3>
+                        <p class="text-xs opacity-90">La force du Collectif</p>
+                    </div>
+                    <div class="p-6 space-y-5">
+                        <!-- Item 1 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-bold text-slate-700">1. Relation avec l'équipe</span>
+                                <span class="font-bold text-slate-800">62%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div class="bg-slate-800 h-2 rounded-full" style="width: 62%"></div></div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-600">2. Travail qui a du Sens</span>
+                                <span class="font-bold text-slate-800">61%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div class="bg-slate-800 h-2 rounded-full" style="width: 61%"></div></div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-600">3. Équilibre Vie Pro/Perso</span>
+                                <span class="font-bold text-slate-800">61%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div class="bg-slate-800 h-2 rounded-full" style="width: 61%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profil Management -->
+                <div class="card overflow-hidden">
+                    <div class="bg-gradient-mng p-4 text-white">
+                        <h3 class="font-bold text-lg">🟦 Management</h3>
+                        <p class="text-xs opacity-90">Rémunération & Relations</p>
+                    </div>
+                    <div class="p-6 space-y-5">
+                        <!-- Item 1 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-bold text-slate-700">1. Bonne rémunération</span>
+                                <span class="font-bold text-blue-600">66%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div class="bg-blue-600 h-2 rounded-full" style="width: 66%"></div></div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-600">2. Relation avec l'équipe</span>
+                                <span class="font-bold text-blue-600">64%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div class="bg-blue-600 h-2 rounded-full" style="width: 64%"></div></div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-600">3. Environnement Bienveillant</span>
+                                <span class="font-bold text-blue-600">60%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div class="bg-blue-600 h-2 rounded-full" style="width: 60%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Insight -->
+            <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r text-sm text-yellow-900 flex items-start gap-3">
+                <span class="text-xl">🧩</span>
+                <div>
+                    <strong>Insight Transverse :</strong> 94% considèrent le travail comme un facteur d'épanouissement. Le "Sens" est le socle commun, mais les étudiants en Management placent l'argent en N°1.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PERCEPTION DE L'ENTREPRISE -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="card p-6">
+                <h3 class="text-lg font-bold mb-6 text-slate-800">🏢 L'Entreprise : Optimisme vs Lucidité</h3>
+                <div class="space-y-6">
+                    <!-- Gauge 1 -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold text-slate-500 mb-1">
+                            <span>INDIVIDUEL</span>
+                            <span class="text-green-600">COLLABORATIF (77%)</span>
+                        </div>
+                        <div class="flex w-full h-3 rounded-full overflow-hidden bg-slate-200">
+                            <div class="bg-green-500" style="width: 77%; margin-left: auto;"></div> <!-- Hack to show right side -->
+                        </div>
+                    </div>
+                    <!-- Gauge 2 -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold text-slate-500 mb-1">
+                            <span>PAISIBLE</span>
+                            <span class="text-orange-500">STRESSANT (76%)</span>
+                        </div>
+                        <div class="flex w-full h-3 rounded-full overflow-hidden bg-slate-200">
+                            <div class="bg-orange-500" style="width: 76%; margin-left: auto;"></div>
+                        </div>
+                    </div>
+                    <!-- Gauge 3 -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold text-slate-500 mb-1">
+                            <span>ENNUYEUX</span>
+                            <span class="text-blue-500">CAPTIVANT (71%)</span>
+                        </div>
+                        <div class="flex w-full h-3 rounded-full overflow-hidden bg-slate-200">
+                            <div class="bg-blue-500" style="width: 71%; margin-left: auto;"></div>
+                        </div>
+                    </div>
+                    <!-- Gauge 4 -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold text-slate-500 mb-1">
+                            <span>SIMPLE</span>
+                            <span class="text-red-400">COMPLIQUÉ (70%)</span>
+                        </div>
+                        <div class="flex w-full h-3 rounded-full overflow-hidden bg-slate-200">
+                            <div class="bg-red-400" style="width: 70%; margin-left: auto;"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 mt-6 italic bg-slate-50 p-2 rounded">
+                    📌 <strong>Lecture :</strong> Une culture collaborative appréciée, mais une structure jugée trop hiérarchique (65%) et complexe.
+                </p>
+            </div>
+
+            <!-- Focus IA -->
+            <div class="card p-6 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold mb-2">🤖 Inquiétude face à l'IA</h3>
+                    <p class="text-sm text-slate-500 mb-6">"L'IA va-t-elle transformer ou menacer mon métier ?"</p>
+                    <div class="chart-container" style="height: 200px;">
+                        <canvas id="chartIA"></canvas>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-slate-100 rounded text-center text-sm text-slate-600">
+                    Moyenne globale : <strong>28%</strong> d'inquiétude.<br>
+                    Les <strong>Ingénieurs (19%)</strong> sont les plus confiants techniquement.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROJECTION CARRIÈRE -->
+        <section class="card p-6 md:p-8">
+            <h2 class="section-title">🔮 Début de Carrière : Le Grand Écart</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Durée Idéale -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold text-slate-400 uppercase">Durée "Idéale" du 1er poste</h4>
+                    <div class="chart-container">
+                        <canvas id="chartDuration"></canvas>
+                    </div>
+                    <p class="text-xs text-center text-slate-500">Un premier poste perçu comme "expérimental" (12 à 23 mois).</p>
+                </div>
+
+                <!-- Salaire vs Passion -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold text-slate-400 uppercase">Sacrifier salaire pour passion ? (% Oui)</h4>
+                    <div class="chart-container">
+                        <canvas id="chartPassion"></canvas>
+                    </div>
+                    <p class="text-xs text-center text-slate-500">Les Managers (Business Schools) sont les moins prêts au sacrifice.</p>
+                </div>
+
+                <!-- Mobilité -->
+                <div class="bg-slate-50 rounded-xl p-6 flex flex-col justify-center">
+                    <h4 class="text-sm font-bold text-slate-400 uppercase mb-4 text-center">À l'horizon 2 ans</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold">63%</div>
+                            <div class="text-sm">Veulent changer d'<strong>entreprise</strong></div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold">54%</div>
+                            <div class="text-sm">Veulent changer de <strong>métier</strong></div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold">40%</div>
+                            <div class="text-sm">Veulent changer de <strong>secteur</strong></div>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 text-xs text-slate-500 text-center">
+                        👉 Une phase d'exploration active.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ZOOM MANAGEMENT -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="card p-6 border-l-4 border-blue-500">
+                <h3 class="text-lg font-bold mb-4 text-blue-800">🔍 Zoom : Profil "Management"</h3>
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase mb-2">Top 3 Craintes</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center text-slate-700"><span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>Perte de sens</li>
+                            <li class="flex items-center text-slate-700"><span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>Ennui</li>
+                            <li class="flex items-center text-slate-700"><span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>Surcharge travail</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase mb-2">Critères QVT</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center text-slate-700"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>Valeurs personnelles</li>
+                            <li class="flex items-center text-slate-700"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>Santé mentale</li>
+                            <li class="flex items-center text-slate-700"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>Intérêt fonction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-6 bg-slate-900 text-white flex flex-col justify-center">
+                <h3 class="text-lg font-bold mb-2">📉 Le Basculement des Priorités</h3>
+                <p class="text-sm text-slate-400 mb-6">Quelle est votre priorité n°1 dans la vie ?</p>
+                <div class="space-y-6">
+                    <div class="relative">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Début de Carrière</span>
+                            <span class="font-bold text-blue-400">44% TRAVAIL</span>
+                        </div>
+                        <div class="w-full bg-slate-700 h-2 rounded-full"><div class="bg-blue-500 h-2 rounded-full" style="width: 44%"></div></div>
+                    </div>
+                    <div class="relative">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>À 35 ans (Projection)</span>
+                            <span class="font-bold text-pink-400">77% FAMILLE</span>
+                        </div>
+                        <div class="w-full bg-slate-700 h-2 rounded-full"><div class="bg-pink-500 h-2 rounded-full" style="width: 77%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONCLUSION -->
+        <footer class="bg-white rounded-xl p-8 text-center border-t-4 border-indigo-500 shadow-lg">
+            <h2 class="text-xl font-bold text-slate-900 mb-3">🧠 Conclusion Data Scientist</h2>
+            <p class="text-slate-600 text-sm max-w-4xl mx-auto leading-relaxed">
+                Les données révèlent une génération moins focalisée sur la stabilité institutionnelle et davantage sur <strong>l'épanouissement psychologique</strong>. 
+                Pour les RH, l'équation de la fidélisation ne repose plus sur la promesse de carrière à vie, mais sur un tryptique immédiat : 
+                <span class="font-bold text-indigo-600">Sens + Confiance + Santé Mentale</span>. 
+                Les entreprises qui offriront un cadre bienveillant et flexible capteront ces talents "volatiles par nature".
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
+        Chart.defaults.color = '#64748b';
+
+        // 1. CHART: Inquiétude IA
+        new Chart(document.getElementById('chartIA'), {
+            type: 'bar',
+            data: {
+                labels: ['Management', 'Universitaires', 'Ingénieurs'],
+                datasets: [{
+                    label: '% Inquiétude IA',
+                    data: [33, 29, 19],
+                    backgroundColor: ['#3B82F6', '#EF4444', '#1F2937'],
+                    borderRadius: 4,
+                    barThickness: 30
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { x: { beginAtZero: true, max: 50, grid: { display: false } }, y: { grid: { display: false } } }
+            }
+        });
+
+        // 2. CHART: Durée Idéale (Mois)
+        new Chart(document.getElementById('chartDuration'), {
+            type: 'bar',
+            data: {
+                labels: ['Ingénieurs', 'Management', 'Universitaires'],
+                datasets: [{
+                    label: 'Mois',
+                    data: [23, 18, 12],
+                    backgroundColor: ['#1F2937', '#3B82F6', '#EF4444'],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, title: { display: true, text: 'Mois' } }, x: { grid: { display: false } } }
+            }
+        });
+
+        // 3. CHART: Passion vs Salaire
+        new Chart(document.getElementById('chartPassion'), {
+            type: 'bar',
+            data: {
+                labels: ['Universitaires', 'Ingénieurs', 'Management'],
+                datasets: [{
+                    label: '% Acceptant salaire bas par passion',
+                    data: [60, 57, 43],
+                    backgroundColor: ['#EF4444', '#1F2937', '#3B82F6'],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, max: 100 }, x: { grid: { display: false } } }
+            }
+        });
+    </script>
+</body>
+</html>
